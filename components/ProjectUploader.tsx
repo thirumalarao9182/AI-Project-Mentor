@@ -90,10 +90,10 @@ const ProjectUploader: React.FC<ProjectUploaderProps> = ({ onFilesLoaded, isLoad
     <div className="max-w-3xl mx-auto space-y-8 animate-in fade-in duration-500">
       {/* Quick Start Card */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-1 rounded-3xl shadow-xl shadow-blue-500/10">
-        <div className="bg-white p-8 rounded-[22px] flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-card p-8 rounded-[22px] flex flex-col md:flex-row items-center justify-between gap-6 transition-colors duration-300">
           <div className="space-y-2 text-center md:text-left">
-            <h3 className="text-xl font-black text-slate-800 tracking-tight">Judging Quick Start</h3>
-            <p className="text-slate-500 text-sm font-medium">No files handy? Run our architect audit on a sample project with intentional design flaws.</p>
+            <h3 className="text-xl font-black text-text-primary tracking-tight">Judging Quick Start</h3>
+            <p className="text-text-secondary text-sm font-medium">No files handy? Run our architect audit on a sample project with intentional design flaws.</p>
           </div>
           <button 
             onClick={loadDemoProject}
@@ -105,47 +105,47 @@ const ProjectUploader: React.FC<ProjectUploaderProps> = ({ onFilesLoaded, isLoad
         </div>
       </div>
 
-      <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-        <label className="block text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4">
+      <div className="bg-card p-8 rounded-3xl shadow-sm border border-border-main transition-colors duration-300">
+        <label className="block text-sm font-black text-text-secondary uppercase tracking-[0.2em] mb-4">
           1. Target Outcome
         </label>
         <textarea
           value={goal}
           onChange={(e) => setGoal(e.target.value)}
           placeholder="What are you trying to achieve? (e.g. 'Optimize for high traffic', 'Fix potential security leaks', 'Modernize architecture')"
-          className="w-full h-24 p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all resize-none mb-8 font-medium text-slate-700"
+          className="w-full h-24 p-4 bg-muted-bg border border-border-main rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all resize-none mb-8 font-medium text-text-primary placeholder:text-text-secondary/50 shadow-inner"
         />
 
-        <label className="block text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4">
+        <label className="block text-sm font-black text-text-secondary uppercase tracking-[0.2em] mb-4">
           2. Code Ingestion
         </label>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* ZIP Upload Card */}
-          <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50 hover:bg-white hover:border-indigo-400 transition-all group cursor-pointer relative" onClick={() => zipInputRef.current?.click()}>
+          <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-border-main rounded-2xl bg-muted-bg hover:bg-card hover:border-indigo-400 transition-all group cursor-pointer relative" onClick={() => zipInputRef.current?.click()}>
             <input type="file" ref={zipInputRef} onChange={handleZipUpload} accept=".zip" className="hidden" />
-            <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 bg-indigo-500/10 text-indigo-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
             </div>
-            <h4 className="font-bold text-slate-800 text-center">Upload ZIP</h4>
-            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Single archive</p>
+            <h4 className="font-bold text-text-primary text-center">Upload ZIP</h4>
+            <p className="text-[10px] text-text-secondary font-bold uppercase tracking-widest mt-1">Single archive</p>
           </div>
 
           {/* Folder Upload Card */}
-          <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50 hover:bg-white hover:border-blue-400 transition-all group cursor-pointer relative" onClick={() => fileInputRef.current?.click()}>
+          <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-border-main rounded-2xl bg-muted-bg hover:bg-card hover:border-blue-400 transition-all group cursor-pointer relative" onClick={() => fileInputRef.current?.click()}>
             <input type="file" ref={fileInputRef} onChange={handleFolderChange} multiple webkitdirectory="" directory="" className="hidden" />
-            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 bg-blue-500/10 text-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
-            <h4 className="font-bold text-slate-800 text-center">Upload Folder</h4>
-            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Recursive scan</p>
+            <h4 className="font-bold text-text-primary text-center">Upload Folder</h4>
+            <p className="text-[10px] text-text-secondary font-bold uppercase tracking-widest mt-1">Recursive scan</p>
           </div>
         </div>
 
         {(isLoading || extracting) && (
-          <div className="mt-8 p-4 bg-blue-50 rounded-2xl flex items-center gap-4 animate-pulse">
+          <div className="mt-8 p-4 bg-blue-500/10 rounded-2xl flex items-center gap-4 animate-pulse border border-blue-500/20">
             <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-            <span className="text-sm font-bold text-blue-700">
+            <span className="text-sm font-bold text-blue-700 dark:text-blue-400">
               {extracting ? "Extracting ZIP contents..." : "Orchestrating Gemini analysis..."}
             </span>
           </div>
