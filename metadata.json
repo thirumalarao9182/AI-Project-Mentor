@@ -1,0 +1,5 @@
+{
+  "name": "AI Project Mentor",
+  "description": "An intelligent architectural and code analysis platform that provides deep insights, security audits, and mentorship for software projects using Gemini 3 Pro.",
+  "requestFramePermissions": []
+}

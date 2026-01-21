@@ -1,11 +1,18 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# AI Project Mentor
 
-  <h1>Built with AI Studio</h2>
+**AI Project Mentor** is a deep-reasoning architectural audit platform powered by Gemini 3 Pro. It analyzes entire software projects to provide mentorship, security audits, and structural visualizations.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🚀 Key Features
+- **Sequential Reasoning Pipeline**: 5-step analysis (Context -> Architecture -> Resilience -> Documentation -> Pitch).
+- **Architectural Mapping**: Generates Mermaid.js flow diagrams based on your actual code structure.
+- **Resilience Audit**: Professional security and performance scanning.
+- **Mentor Chat**: A context-aware assistant that knows your entire codebase.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 🛠️ Built With
+- **Gemini 3 Pro**: For deep multi-file reasoning.
+- **React & Tailwind CSS**: For a high-fidelity, responsive dashboard.
+- **JSZip**: For client-side project ingestion.
 
-</div>
+## 🧑‍⚖️ Judge's Quick Start
+Click the **"Try Demo Project"** button on the home screen to see how the AI handles a project with intentional architectural flaws and security leaks.
